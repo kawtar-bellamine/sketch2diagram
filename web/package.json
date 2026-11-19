@@ -1,0 +1,9 @@
+{
+  "name": "sketch2diagram-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "dev": "vite", "build": "tsc --noEmit && vite build" },
+  "dependencies": { "mermaid": "11.4.1" },
+  "devDependencies": { "typescript": "5.6.3", "vite": "5.4.11" }
+}

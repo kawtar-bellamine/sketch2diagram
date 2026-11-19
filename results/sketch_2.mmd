@@ -1,0 +1,15 @@
+flowchart TD
+    S(["part / at the inspection station"])
+    N1["Calibrate the machine"]
+    N2["Assemble the gearbox"]
+    N3["Clean the tool"]
+    N4{"the test passes?"}
+    N5["Pack the parcel"]
+    E(["End"])
+    S --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N5
+    N4 --> N5
+    N3 --> N4
+    N4 --> E

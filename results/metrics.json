@@ -1,0 +1,79 @@
+{
+ "text_set_A": {
+  "node_f1": 1.0,
+  "edge_f1": 1.0,
+  "kind_acc": 1.0,
+  "exact": 1.0
+ },
+ "text_set_B": {
+  "node_f1": 1.0,
+  "edge_f1": 0.995,
+  "kind_acc": 1.0,
+  "exact": 0.992
+ },
+ "text_set_C_handwritten": {
+  "node_f1": 0.917,
+  "edge_f1": 0.775,
+  "kind_acc": 1.0,
+  "exact": 0.4,
+  "n": 10
+ },
+ "text_set_C_failures": [
+  {
+   "text": "When a customer order arrives, the sales team checks the order and then reserves the stock. The parts are picked in the warehouse. After packing the parcel, the team ships the parcel. The process ends there.",
+   "got": "flowchart TD\n    N0[\"Check the order\"]\n    N1[\"Reserve the stock\"]\n    N2[\"Pick the parts\"]\n    N3[\"Ship the parcel\"]\n    E([\"End\"])\n    N0 --> N1\n    N1 --> N2\n    N2 --> N3\n    N3 --> E"
+  },
+  {
+   "text": "When a new batch is released, operators assemble the gearbox and weld the frame. The housing gets painted. A label is printed for each unit. The process ends.",
+   "got": "flowchart TD\n    N0[\"Assemble the gearbox\"]\n    N1[\"Paint the housing\"]\n    N2[\"Print a label\"]\n    E([\"End\"])\n    N0 --> N1\n    N1 --> N2\n    N2 --> E"
+  },
+  {
+   "text": "Everything starts when a weld is finished. The welder cleans the weld, then an inspector inspects the weld. Should the weld be rejected, it is ground out and redone; otherwise the report is updated. End of the process.",
+   "got": "flowchart TD\n    S([\"a weld is finished\"])\n    N0[\"Clean the weld\"]\n    N1[\"Inspect the weld\"]\n    N2[\"Update the report\"]\n    E([\"End\"])\n    S --> N0\n    N0 --> N1\n    N1 --> N2\n    N2 --> E"
+  },
+  {
+   "text": "The process starts when the alarm sounds. The operator stops the line and informs the supervisor. If the cause is found, the fault is fixed; otherwise, maintenance is called. The line is restarted. The process ends.",
+   "got": "flowchart TD\n    S([\"the alarm sounds\"])\n    N0[\"Stop the line\"]\n    D1{\"the cause is found?\"}\n    N1[\"Fix the fault\"]\n    N2[\"Call the maintenance\"]\n    N3[\"Restart the line\"]\n    E([\"End\"])\n    S --> N0\n    N0 --> D1\n    D1 -->|yes| N1\n    D1 -->|no| N2\n    N1 --> N3\n    N2 --> N3\n    N3 --> E"
+  },
+  {
+   "text": "When a sample is delivered, the lab registers the sample. Afterwards the sample is analysed. If the result is valid, the certificate is printed; otherwise, the sample is analysed again. The process then ends.",
+   "got": "flowchart TD\n    N0[\"Register the sample\"]\n    N1[\"Analyse the sample\"]\n    D1{\"the result is valid?\"}\n    N2[\"Print the certificate\"]\n    N3[\"Analyse the sample\"]\n    E([\"End\"])\n    N0 --> N1\n    N1 --> D1\n    D1 -->|yes| N2\n    D1 -->|no| N3\n    N2 --> E\n    N3 --> E"
+  },
+  {
+   "text": "The process starts when a truck arrives. The goods are unloaded and counted. If the count is correct, the stock level is updated; otherwise, the supplier is contacted. Finally, the delivery note is archived. The process then ends.",
+   "got": "flowchart TD\n    S([\"a truck arrives\"])\n    N0[\"Unload the goods\"]\n    D1{\"the count is correct?\"}\n    N1[\"Update the stock level\"]\n    N2[\"Contact the supplier\"]\n    N3[\"Archive the delivery note\"]\n    E([\"End\"])\n    S --> N0\n    N0 --> D1\n    D1 -->|yes| N1\n    D1 -->|no| N2\n    N1 --> N3\n    N2 --> N3\n    N3 --> E"
+  }
+ ],
+ "sketch_clean": {
+  "with_ocr": {
+   "node_f1": 0.999,
+   "edge_f1": 0.94,
+   "kind_acc": 0.999,
+   "exact": 0.533
+  },
+  "structure_only": {
+   "node_f1": 0.999,
+   "edge_f1": 0.941,
+   "kind_acc": 0.999,
+   "direction_ok": 0.941
+  },
+  "seconds_per_sketch": 0.97
+ },
+ "sketch_photo-like": {
+  "with_ocr": {
+   "node_f1": 0.651,
+   "edge_f1": 0.285,
+   "kind_acc": 0.872,
+   "exact": 0.042
+  },
+  "structure_only": {
+   "node_f1": 0.998,
+   "edge_f1": 0.933,
+   "kind_acc": 0.801,
+   "direction_ok": 0.938
+  },
+  "seconds_per_sketch": 1.05
+ },
+ "mermaid_render_ok": "20/20",
+ "structurally_valid": "20/20"
+}

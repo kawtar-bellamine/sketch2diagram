@@ -1,0 +1,13 @@
+numpy>=1.26
+opencv-python-headless>=4.8
+spacy>=3.7
+en_core_web_md @ https://github.com/explosion/spacy-models/releases/download/en_core_web_md-3.8.0/en_core_web_md-3.8.0-py3-none-any.whl
+rapidfuzz>=3.0
+matplotlib>=3.8
+mcp>=2.0
+fastapi>=0.110
+uvicorn>=0.29
+python-multipart>=0.0.9
+pytest>=8.0
+pymupdf>=1.24
+pillow>=10.0

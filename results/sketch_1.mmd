@@ -1,0 +1,17 @@
+flowchart TD
+    S(["@ new batch is released"])
+    N1["Rework the part"]
+    N2["Update the stock level"]
+    N3["Record the result"]
+    N4["Approve the request"]
+    N5{"the part is within tolerance?"}
+    N6["Contact the customer"]
+    E(["End"])
+    S --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N5 --> E
+    N6 --> E

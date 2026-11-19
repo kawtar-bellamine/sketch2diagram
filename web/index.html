@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sketch to diagram</title></head>
+<body>
+  <div class="page">
+    <header><div class="brand">Text or sketch → diagram</div>
+      <div class="sub">Describe a process or upload a photo of a hand-drawn flowchart; edit the Mermaid code, the diagram follows.</div></header>
+    <div class="grid">
+      <section class="left">
+        <div class="tabs"><button id="t-text" class="on">Text</button><button id="t-sketch">Sketch</button></div>
+        <div id="p-text"><textarea id="desc"></textarea><button id="go-text" class="primary">Generate</button></div>
+        <div id="p-sketch" hidden><input type="file" id="file" accept="image/*" /><img id="preview" alt="" /></div>
+        <label>Mermaid (editable)</label><textarea id="code" spellcheck="false"></textarea>
+        <div id="issues"></div>
+      </section>
+      <section class="right"><div id="diagram"></div></section>
+    </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

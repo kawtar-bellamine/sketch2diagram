@@ -1,0 +1,21 @@
+flowchart TD
+    S(["a new batch is released"])
+    N1["Send the invoice"]
+    N2["Print the label"]
+    N3["Rework the part"]
+    N4["Contact the customer"]
+    N5["Clean the tool"]
+    N6{"the pressure is correct?"}
+    N7["Inspect the part"]
+    N8["Measure the dimensions"]
+    E(["End"])
+    S --> N1
+    N1 --> N2
+    N2 --> N3
+    N3 --> N4
+    N4 --> N5
+    N5 --> N6
+    N6 --> N7
+    N6 --> N8
+    N7 --> N8
+    N8 --> E
