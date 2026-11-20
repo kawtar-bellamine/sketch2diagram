@@ -84,7 +84,7 @@ def render_svg(mermaid: str) -> tuple[bool, str]:
     with tempfile.TemporaryDirectory() as d:
         src, out = Path(d) / "g.mmd", Path(d) / "g.svg"
         src.write_text(mermaid)
-        r = subprocess.run(["mmdc", "-i", str(src), "-o", str(out), "-q"], capture_output=True, text=True, timeout=120)
+        r = subprocess.run(["mmdc", "-i", str(src), "-o", str(out), "-q", "-p", str(Path(__file__).with_name("puppeteer.json"))], capture_output=True, text=True, timeout=120)
         if r.returncode != 0 or not out.exists():
             return False, (r.stderr or r.stdout)[-500:]
         return True, out.read_text()
